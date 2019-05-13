@@ -155,7 +155,11 @@ public class DrawingAppPanel
 			public void mouseMoved(MouseEvent e)
 		});
 		
-		saveButton.addActionListeners
+		saveButton.addActionListener(new ActionListener()
+				
+		loadButton.addActionListener(new ActionListener()
+				
+		
 	}
 
 }

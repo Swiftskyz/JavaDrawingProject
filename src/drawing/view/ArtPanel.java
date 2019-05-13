@@ -29,6 +29,77 @@ public class ArtPanel extends JPanel
 	{
 		super();
 		this.app = app;
+		this.currentCanvas = new BuffferedImage(700, 700, BufferedImage.TYPE_INT_ARGB);
+		setupPanel();
+		resetPoint();
 	}
 
+	public void resetPoint()
+	{
+		
+	}
+	
+	public void clearImage()
+	{
+		
+	}
+	
+	public void drawLine(int currentX, int currentY, int width)
+	{
+		
+	}
+	
+	public void drawDot(int currentX, int currentY, int width)
+	{
+		Graphics2D current = currentCanvas.createGraphics();
+		current.setColor(currentColor);
+		current.setStroke(new BasicStroke(width));
+		current.drawOval(currentX, currentY, width, width);
+		repaint();
+	}
+	
+	public void saveImage()
+	{
+		
+	}
+	
+	public void loadImage()
+	{
+		
+	}
+	
+	private void setupPanel()
+	{
+		this.setPreferredSize(new Dimension(700, 700));
+		this.setBackground(Color.MAGENTA);
+		this.currentColor = Color.GREEN;
+	}
+	
+	public void setCurrentColor(String color)
+	{
+		if(color.equalsIgnoreCase("Black"))
+		{
+			currentColor = Color.BLACK;
+		}
+		else if(color.equals("purple"))
+		{
+			currentColor = new Color(75, 0, 130);
+		}
+		else
+		{
+			currentColor = randomColor();
+		}
+	}
+	
+	private Color randomColor()
+	{
+		
+	}
+	
+	@Override
+	protected void paintComponent(Graphics graphics)
+	{
+		super.paintComponent(graphics);
+		graphics.drawImage(currentCanvas, 0, 0, null);
+	}
 }
